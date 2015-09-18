@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.mortbay.jetty.testwars:test-jndi-webapp:war:8.0.4.v20111024">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/testwars/test-jndi-webapp/8.0.4.v20111024/test-jndi-webapp-8.0.4.v20111024.war!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/testwars/test-jndi-webapp/8.0.4.v20111024/test-jndi-webapp-8.0.4.v20111024-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/testwars/test-jndi-webapp/8.0.4.v20111024/test-jndi-webapp-8.0.4.v20111024-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

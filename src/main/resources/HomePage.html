@@ -1,0 +1,18 @@
+<html lang="en" xmlns:wicket="http://www.w3.org/1999/xlink">
+<wicket:extend>
+    <div wicket:id="feedback"></div>
+    <form wicket:id="someStuffForm">
+        <p>
+            <label  >Some text</label>:
+            <input   wicket:id="someText" type="text" size="20" /> <br>
+            <label  >First number</label>:
+            <input wicket:id="firstNumber" type="text" size="20" /> <br>
+            <label  >Second number</label>:
+            <input   wicket:id="secondNumber" type="text" size="20" /><br>
+        </p>
+        <input type="submit" value="Submit some stuff" />
+    </form>
+    <span wicket:id="someStuff"></span>
+
+</wicket:extend>
+</html>

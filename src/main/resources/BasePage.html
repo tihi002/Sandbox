@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        body {
+        background-color: #f2f2f2;
+        }
+        #nav {
+        width: 100%;
+        float: left;
+        margin: 0 0 0 0;
+        background-color:#A9A9A9;
+        padding: 0;
+        list-style: none;
+        border-bottom: 1px solid #ccc;
+        border-top: 1px solid #ccc; }
+        #nav li {
+        float: left; }
+        #nav li span {
+        display: block;
+        padding: 8px 15px;
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+        border-right: 1px solid #ccc; }
+        #nav li span:hover {
+        color: #c00;
+        background-color: #fff; }
+
+        p.listP {
+        padding:10px;
+        border: 1px solid #000000;
+
+        }
+        .formBoxes {
+            margin: 100px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="header"> <!-- header-->
+    <h1 align="center">
+        <span wicket:id="pageTitle"> title </span>
+    </h1>
+
+    <ul id="nav">
+        <wicket:enclosure child="linkToHomePage">
+            <li>
+                <span wicket:id="linkToHomePage"> Home page </span>
+            </li>
+        </wicket:enclosure>
+
+        <wicket:enclosure child="linkToSecondPage">
+            <li>
+                <span wicket:id="linkToSecondPage"> Second page  </span>
+            </li>
+        </wicket:enclosure>
+
+        <wicket:enclosure child="linkToThirdPage">
+            <li>
+                <span wicket:id="linkToThirdPage"> Third page  </span>
+            </li>
+        </wicket:enclosure>
+    </ul>
+    <br>
+</div>
+
+
+<div id="body">
+
+    <wicket:child/>
+
+</div>
+<hr>
+<div id="footer">
+
+
+    <h4 align="center"> Author: Tihi</h4>
+</div>
+<hr>
+</body>
+</html>
