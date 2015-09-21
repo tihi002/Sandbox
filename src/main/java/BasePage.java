@@ -2,7 +2,6 @@ import org.apache.wicket.markup.html.WebPage;
 
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
-import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.model.LoadableDetachableModel;
 
 public abstract class BasePage extends WebPage {

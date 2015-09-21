@@ -7,6 +7,16 @@ import java.util.Random;
 public class SomeStuff implements Serializable {
     private static final Random r = new Random();
 
+    public SomeStuff() {
+
+    }
+
+    public SomeStuff(String someText, int firstNumber, int secondNumber) {
+        this.someText = someText;
+        this.theFirstNumber = firstNumber;
+        this.theSecondNumber = secondNumber;
+    }
+
 
     String someText;
     int theFirstNumber;
@@ -17,6 +27,7 @@ public class SomeStuff implements Serializable {
         theFirstNumber = r.nextInt(10);
         theSecondNumber = r.nextInt(10);
     }
+
 
     public String getSomeText() {
         return someText;

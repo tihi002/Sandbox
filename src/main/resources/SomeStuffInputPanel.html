@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:wicket="http://www.w3.org/1999/xlink">
+    <wicket:panel>
+        <form wicket:id="someStuffForm">
+            <table style="width=100%;  border-collapse: collapse;" border="1px">
+                <tr>
+                    <td><label> Some text</label>:</td>
+                    <td><label> First number </label>:</td>
+                    <td><label> Second number </label>:</td>
+
+                </tr>
+                <tr>
+                    <td><input wicket:id="someText" type="text" size="20"/></td>
+                    <td><input wicket:id="firstNumber" type="text" size="20"/></td>
+                    <td><input wicket:id="secondNumber" type="text" size="20"/></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div wicket:id="feedback1"></div>
+                    </td>
+                    <td>
+                        <div wicket:id="feedback2"></div>
+                    </td>
+                    <td>
+                        <div wicket:id="feedback3"></div>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" wicket:id="ajaxSubmit" value="Submit some stuff"/>
+
+        </form>
+
+    </wicket:panel>
+
+</html>

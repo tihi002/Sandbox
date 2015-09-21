@@ -1,71 +1,26 @@
-import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.form.Form;
-import org.apache.wicket.markup.html.form.TextField;
-import org.apache.wicket.markup.html.panel.FeedbackPanel;
-import org.apache.wicket.model.Model;
+import org.apache.wicket.ajax.AjaxRequestTarget;
 
 public class HomePage extends BasePage {
 
-    private Label label;
 
-    private String valueToOutput = "empty";
-
-    private Model<String> someTextModel = new Model<String>("initial");
-    private Model<String> firstNumberModel = new Model<String>("1");
-    private Model<String> secondNumberModel = new Model<String>("2");
+    private SomeStuffPanel someStuffPanel;
+    private SomeStuffInputPanel someStuffInputPanel;
+    private SomeStuff someStuff = new SomeStuff("sss", 1, 2);
 
     public HomePage() {
+        someStuff = new SomeStuff("sss", 1, 2);
+        someStuffPanel = new SomeStuffPanel("SomeStuffPanel", someStuff);
 
-        label = new Label("someStuff", new Model<String>() {
+        someStuffInputPanel = new SomeStuffInputPanel("SomeStuffInputPanel") {
             @Override
-            public String getObject() {
-                return valueToOutput;
+            void ajaxSubmit(AjaxRequestTarget target) {
+                someStuffPanel = new SomeStuffPanel("SomeStuffPanel", someStuff);;
+                HomePage.this.addOrReplace(someStuffPanel);
+                target.add(someStuffPanel);
             }
-        });
-
-        add(label);
-
-
-        add(new FeedbackPanel("feedback"));
-
-        final TextField<String> someText = new TextField<String>("someText", someTextModel).ad;
-        final TextField<String> firstNumber = new TextField<String>("firstNumber", firstNumberModel);
-        final TextField<String> secondNumber = new TextField<String>("secondNumber", secondNumberModel);
-        someText.setRequired(true);
-        firstNumber.setRequired(true);
-        secondNumber.setRequired(true);
-//        username.add(new UsernameValidator());
-
-
-        Form<SomeStuff> form = new Form<SomeStuff>("someStuffForm") {
-
-            @Override
-            protected void onSubmit() {
-
-//                final String someTextValue = someText.getModelObject();
-//                final int firstnumberValue = Integer.parseInt(firstNumberModel.getModelObject());
-//                final int secondNumberValue = Integer.parseInt(secondNumberModel.getModelObject());
-
-                  valueToOutput = someTextModel.getObject() + " " + firstNumberModel.getObject() + " " + secondNumberModel.getObject();
-//                PageParameters pageParameters = new PageParameters();
-//                pageParameters.add("someText", someTextValue);
-//                pageParameters.add("firstNumberModel", firstnumberValue);
-//                pageParameters.add("secondNumberModel", secondNumberValue);
-//                setResponsePage(HomePage.class, pageParameters);
-            }
-
         };
-
-
-        form.add(someText);
-        form.add(firstNumber);
-        form.add(secondNumber);
-
-
-        add(form);
-
-
-
+        add(someStuffPanel);
+        add(someStuffInputPanel);
     }
 
     @Override
