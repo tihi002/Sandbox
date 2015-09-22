@@ -1,3 +1,5 @@
+package com.gmail.rozman.tihamer.POJOs;
+
 import java.io.Serializable;
 import java.util.Random;
 
@@ -7,25 +9,25 @@ import java.util.Random;
 public class SomeStuff implements Serializable {
     private static final Random r = new Random();
 
+    String someText;
+    String theFirstNumber;
+    String theSecondNumber;
+
     public SomeStuff() {
 
     }
 
-    public SomeStuff(String someText, int firstNumber, int secondNumber) {
+    public SomeStuff(String someText, String firstNumber, String secondNumber) {
         this.someText = someText;
         this.theFirstNumber = firstNumber;
         this.theSecondNumber = secondNumber;
     }
 
 
-    String someText;
-    int theFirstNumber;
-    int theSecondNumber;
-
-    void generateFields() {
+    public void generateFields() {
         someText = "kiskutya";
-        theFirstNumber = r.nextInt(10);
-        theSecondNumber = r.nextInt(10);
+        theFirstNumber = String.valueOf(r.nextInt(10));
+        theSecondNumber = String.valueOf(r.nextInt(10));
     }
 
 
@@ -37,22 +39,19 @@ public class SomeStuff implements Serializable {
         this.someText = someText;
     }
 
-    public int getTheFirstNumber() {
+    public String getTheFirstNumber() {
         return theFirstNumber;
     }
 
-    public void setTheFirstNumber(int theFirstNumber) {
+    public void setTheFirstNumber(String theFirstNumber) {
         this.theFirstNumber = theFirstNumber;
     }
 
-    public int getTheSecondNumber() {
+    public String getTheSecondNumber() {
         return theSecondNumber;
     }
 
-    public void setTheSecondNumber(int theSecondNumber) {
+    public void setTheSecondNumber(String theSecondNumber) {
         this.theSecondNumber = theSecondNumber;
     }
-
-
-
 }

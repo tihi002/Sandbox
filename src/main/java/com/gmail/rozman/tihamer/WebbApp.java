@@ -1,3 +1,6 @@
+package com.gmail.rozman.tihamer;
+
+import com.gmail.rozman.tihamer.pages.HomePage;
 import org.apache.wicket.protocol.http.WebApplication;
 
 /**

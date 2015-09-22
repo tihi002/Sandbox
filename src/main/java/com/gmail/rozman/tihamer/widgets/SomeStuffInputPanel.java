@@ -1,30 +1,35 @@
+package com.gmail.rozman.tihamer.widgets;
+
+import com.gmail.rozman.tihamer.validators.IntValidator;
+import com.gmail.rozman.tihamer.POJOs.SomeStuff;
+import com.gmail.rozman.tihamer.validators.StringValidator;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxSubmitLink;
 import org.apache.wicket.feedback.ComponentFeedbackMessageFilter;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
-import org.apache.wicket.markup.html.panel.Panel;
+import org.apache.wicket.markup.html.panel.GenericPanel;
 import org.apache.wicket.model.IModel;
-import org.apache.wicket.model.Model;
+import org.apache.wicket.model.PropertyModel;
 
 /**
- * Created by trozman on 2015. 09. 21..
+ * Created by trozman on 2015. 09. 21......
  */
-public abstract class SomeStuffInputPanel<SomeStuff> extends Panel {
+public abstract class SomeStuffInputPanel extends GenericPanel<SomeStuff> {
 
-    private Model<String> someTextModel = new Model<String>("initial");
-    private Model<String> firstNumberModel = new Model<String>("1");
-    private Model<String> secondNumberModel = new Model<String>("2");
 
-//    private SomeStuff someStuff = new SomeStuff("sss", 1, 2);
+    private IModel<String> someTextModel = new PropertyModel<String>(getDefaultModel(), "someText");
+    private IModel<String> firstNumberModel = new PropertyModel<String>(getDefaultModel(), "theFirstNumber");
+    private IModel<String> secondNumberModel = new PropertyModel<String>(getDefaultModel(), "theSecondNumber");
 
     public SomeStuffInputPanel(String id, IModel<SomeStuff> model) {
         super(id, model);
+        initializeComponents();
+
     }
 
     private void initializeComponents() {
-//        someStuff = new SomeStuff("sss", 1, 2);
 
         final TextField<String> someText = new TextField<String>("someText", someTextModel);
         final TextField<String> firstNumber = new TextField<String>("firstNumber", firstNumberModel);
@@ -64,7 +69,7 @@ public abstract class SomeStuffInputPanel<SomeStuff> extends Panel {
             protected void onSubmit(AjaxRequestTarget target, Form form) {
 
                 super.onSubmit(target, form);
-//                someStuff = new SomeStuff(someTextModel.getObject(), Integer.parseInt(firstNumberModel.getObject()), Integer.parseInt(secondNumberModel.getObject()));
+
                 target.add(someTextFeedBackPanel);
                 target.add(firstNumberFeedBackPanel);
                 target.add(secondNumberFeedBackPanel);
@@ -85,11 +90,9 @@ public abstract class SomeStuffInputPanel<SomeStuff> extends Panel {
 
     }
 
-    abstract void ajaxSubmit(AjaxRequestTarget target);
+    protected abstract void ajaxSubmit(AjaxRequestTarget target);
 
-//    SomeStuff getSomeStuff() {
-//        return someStuff;
-//    }
+
 
 
 

@@ -1,3 +1,5 @@
+package com.gmail.rozman.tihamer.pages;
+
 import org.apache.wicket.markup.html.WebPage;
 
 import org.apache.wicket.markup.html.basic.Label;

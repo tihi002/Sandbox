@@ -1,3 +1,5 @@
+package com.gmail.rozman.tihamer.pages;
+
 /**
  * Created by trozman on 2015. 09. 17..
  */

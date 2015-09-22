@@ -1,3 +1,5 @@
+package com.gmail.rozman.tihamer;
+
 import org.apache.wicket.protocol.http.WicketFilter;
 import org.apache.wicket.protocol.http.WicketServlet;
 import org.eclipse.jetty.server.Connector;
@@ -14,7 +16,7 @@ public class MainClass {
 
         // Object that holds, and configures the WicketServlet.
         ServletHolder servletHolder = new ServletHolder(new WicketServlet());
-        servletHolder.setInitParameter("applicationClassName", "WebbApp");
+        servletHolder.setInitParameter("applicationClassName", "com.gmail.rozman.tihamer.WebbApp");
         servletHolder.setInitParameter(WicketFilter.FILTER_MAPPING_PARAM, "/*");
         servletHolder.setInitOrder(1);
 
