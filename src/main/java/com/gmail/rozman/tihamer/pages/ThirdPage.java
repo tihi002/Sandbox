@@ -4,7 +4,7 @@ import com.gmail.rozman.tihamer.POJOs.SomeStuff;
 import com.gmail.rozman.tihamer.widgets.SomeStuffInputPanel;
 import com.gmail.rozman.tihamer.widgets.SomeStuffPanel;
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.ajax.markup.html.navigation.paging.AjaxPagingNavigation;
+import org.apache.wicket.ajax.markup.html.navigation.paging.AjaxPagingNavigator;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.PageableListView;
@@ -30,7 +30,7 @@ public class ThirdPage extends BasePage {
 
         final ArrayList<SomeStuff> someStuffs = new ArrayList<SomeStuff>();
         SomeStuff stuff;
-        for (int i = 0; i <= 10; i++) {
+        for (int i = 0; i <= 50; i++) {
             stuff = new SomeStuff();
             stuff.generateFields();
             someStuffs.add(stuff);
@@ -48,11 +48,10 @@ public class ThirdPage extends BasePage {
 
         list.setOutputMarkupId(true);
         container.add(list);
-        container.add(new AjaxPagingNavigation("navigation", list));
+        container.add(new AjaxPagingNavigator("navigation", list));
         container.setOutputMarkupId(true);
         container.setVersioned(false);
         add(container);
-
 
         Model<SomeStuff> someStuffModel = new Model<SomeStuff>(new SomeStuff("s111ss", "1", "2"));
 

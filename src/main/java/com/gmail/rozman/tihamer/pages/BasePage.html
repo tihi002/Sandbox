@@ -23,6 +23,19 @@
         font-weight: bold;
         color: black;
         border-right: 1px solid #ccc; }
+
+
+        #nav div {
+
+        float: right;
+        display: block;
+        padding: 8px 15px;
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+        border-right: 1px solid #ccc; }
+
+
         #nav li span:hover {
         color: #c00;
         background-color: #fff; }
@@ -33,7 +46,7 @@
 
         }
         .formBoxes {
-            margin: 100px;
+        margin: 100px;
         }
 
     </style>
@@ -64,7 +77,22 @@
                 <span wicket:id="linkToThirdPage"> Third page  </span>
             </li>
         </wicket:enclosure>
+
+
+        <div id="loggin" align="right">
+            <span id="linkToLoginPage"> [log in] </span>
+
+            <wicket:enclosure child="userNameLabel">
+                [ <span wicket:id="userNameLabel">  </span> ]
+
+            </wicket:enclosure>
+
+
+        </div>
+
     </ul>
+
+
     <br>
 </div>
 
